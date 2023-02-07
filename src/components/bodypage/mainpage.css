@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --gold: #ffb338;
+    --light-shadow: #77571d;
+    --dark-shadow: #3e2904;
+  }
+  .Header1{
+    height: 90vh;
+    width: 100vw;
+  }
+ 
+  .wrapper {
+    /* background: radial-gradient(#272727, #1b1b1b); */
+    display: grid;
+    grid-template-areas: 'overlap';
+    /* place-content: center; */
+    text-transform: uppercase;
+    /* height: 100vh; */
+
+  }
+  .wrapper > div {
+    background-clip: text;  
+    -webkit-background-clip: text;
+    color: #363833;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size:50px;
+    text-align: center;
+    margin-top: 10px;
+    grid-area: overlap;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px transparent;
+  }
+  div.bg {
+    background-image: repeating-linear-gradient( 105deg, 
+      var(--gold) 0% , 
+      var(--dark-shadow) 5%,
+      var(--gold) 12%);
+    color: transparent;
+    filter: drop-shadow(5px 15px 15px black);
+    transform: scaleY(1.05);
+    transform-origin: top;
+  }
+  div.fg{
+    background-image: repeating-linear-gradient( 5deg,  
+      var(--gold) 0% , 
+      var(--light-shadow) 23%, 
+      var(--gold) 31%);
+    color: #1e2127;
+    transform: scale(1);
+  }
+
+  article {
+    background: linear-gradient(
+      to right, 
+      hsl(98 100% 62%), 
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+   /* height: 60vh; */
+    margin: 0px 60px;
+    margin-top: 60px;
+    display: flex;
+    /* justify-content: center; */
+    gap: 30px;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    
+  }
+  .img{
+    flex: 3;
+    height: 400px;
+    width: 30%;
+  }
+  .img img{
+    height: 100%;
+    width: 100%;
+  }
+  .sideText h2{
+    flex: 4;
+    padding: 0px 0px;
+  }
+
+  @media (max-width:600px){
+    .wrapper > div{
+        font-size: xx-large;
+        overflow-x: hidden;
+    }
+  }
+  @media (min-width:300px) and (max-width:390px){
+    .wrapper > div{
+      font-size: xx-large;
+      overflow-x: hidden;
+  }
+  .img{
+      flex:8;
+      height: 150px;
+      width: 100%;
+  }
+  .img img{
+    height: 150px;
+    width: 100%;
+  }
+  .sideText h2{
+      float: 4;
+  }
+  .sideText{
+      display: flex;
+      flex-direction: column;
+  }
+  }
+  @media (min-width:390px) and (max-width:800px){
+    .wrapper > div{
+        font-size: xx-large;
+        overflow-x: hidden;
+    }
+    .img{
+        flex:8;
+        height: 200px;
+        width: 100%;
+    }
+    .img img{
+      height: 350px;
+      width: 100%;
+    }
+    .sideText h2{
+        float: 4;
+    }
+    .sideText{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+  .yes{
+    background-color: red;
+    object-fit: contain;
+  }
+.yes img{
+    object-fit: cover;
+}
+ 

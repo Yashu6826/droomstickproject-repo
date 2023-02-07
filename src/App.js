@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Home from './components/Home/Home'
+import Landingpage from './components/hiringpage/Landingpage'
+import Internshipform from './components/hiringpage/Inputforms/Internshipform'
 
-function App() {
+
+import {
+  BrowserRouter,
+  Route,Routes,
+  RouterProvider,
+} from "react-router-dom";
+import Register from './components/loginandregister/Register';
+import Login from './components/loginandregister/Login';
+import Hiring from './components/Hiring/Hiring';
+import FullTime1 from './components/hiringpage/FullTime1';
+import FullTime2 from './components/hiringpage/FullTime2';
+import Internships from './components/hiringpage/Internships';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <BrowserRouter>
+   <Routes>
+    <Route path='/'>
+      <Route index element={ <Home />} />
+      <Route path='register' element={<Register/>} />
+      <Route path='login' element={<Login/>} />
+      <Route path='Hiring' element={<Hiring/>} />
+      <Route path='Landingpage' element={<Landingpage/>} />
+      <Route path='fulltime1' element={<FullTime1/>} />
+      <Route path='fulltime2' element={<FullTime2/>} />
+      <Route path='internship' element={<Internships/>} />
+      <Route path='internshipform' element={<Internshipform/>} />
+      
+      
+     
 
-export default App;
+    </Route>
+   </Routes>
+
+
+
+   </BrowserRouter>
+  )
+}

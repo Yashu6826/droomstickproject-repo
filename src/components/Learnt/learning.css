@@ -1,0 +1,165 @@
+.dividerSection{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 20px;
+}
+.mainContainer h1{
+    color: white;
+     display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    margin-bottom: 50px;
+
+}
+.textSection{
+    flex: 6;
+    color: white;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    padding-left: 70px;
+    font-size: 20px;
+}
+.imagepart{
+    flex: 3;
+    /* padding-right: 20px; */
+}
+.imagepart {
+    height: 350px;
+    width: 100px;
+    
+}
+.imagepart img{
+    height: 100%;
+    width: 100%;
+}
+ .textSection p{
+    line-height: 40px;
+    color: rgb(178, 174, 174);
+}
+
+
+.btn-shine{
+
+    padding-left: 250px;
+    padding-top: 200px;
+    /* margin-top: 200px; */
+    color: white;
+  transform: translate(-50%,-50%);
+  /* padding: 12px 48px; */
+  color: #ffffff;
+  background: linear-gradient(to right, #4d4d4d 0, white 15%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine1 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 50px;
+  text-decoration: none;
+  white-space: nowrap}
+    
+@keyframes shine1{
+  /* 0%{
+    background-position: 20px;} */
+  60%{
+    background-position: 400px}
+   100%{
+    background-position:700px} 
+}
+
+@media(max-width:600px){
+    .mainContainer{
+        width: 100%;
+    }
+    .dividerSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1{
+        font-size: 50px;
+        /* padding-left: 30px; */
+        margin: 0px;
+        /* width: 100px; */
+
+    }
+    .textSection {
+        font-size: 15px;
+       /* padding-left: 10px; */
+        width: 100%;
+        padding: 0px;
+       
+    }
+    .textSection p{
+       padding-left: 10px;
+        /* padding: 0px 10px; */
+        /* height: 500px; */
+    }
+    .imagepart{
+        height: 200px;
+        width: 150px;
+    }
+    .btn-shine{
+        padding-left: 10px;
+        font-size: large;
+    }
+    @keyframes shine1{
+        /* 0%{
+          background-position: 20px;} */
+        60%{
+          background-position: 150px}
+         100%{
+          background-position:200px} 
+      }
+}
+@media(min-width:601px)and (max-width:900px){
+    .mainContainer{
+        width: 100vw;
+    }
+    .dividerSection{
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+    }
+    h1{
+        font-size: 50px;
+        /* padding-left: 30px; */
+        margin: 0px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-top: 20px;
+        /* width: 100px; */
+
+    }
+    .textSection {
+        font-size: 20px;
+       /* padding-left: 10px; */
+        width: 100%;
+        padding: 0px;
+       
+    }
+    .textSection p{
+       padding-left: 10px;
+        /* padding: 0px 10px; */
+    }
+    .imagepart img{
+        padding: 0px;
+    }
+    .btn-shine{
+        padding-left: 50px;
+        font-size: 40px;
+       
+    }
+    @keyframes shine1{
+        /* 0%{
+          background-position: 20px;} */
+        60%{
+          background-position: 200px}
+         100%{
+          background-position:350px} 
+      }
+}

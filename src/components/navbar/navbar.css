@@ -1,0 +1,145 @@
+.Navbar{
+    background: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 80px;
+    width: 100%;
+  }
+  .logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    display: flex;
+    font-weight: bold;
+    gap: 10px;
+  }
+  .linkpart{
+    text-decoration: none;
+    color: white;
+    width: min-content;
+  }
+  
+  nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    
+  }
+  nav ul li {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+  }
+  nav ul li :hover{
+    color: rgb(237, 70, 9);
+    
+
+  }
+  /* a.active,a:hover{
+    background: #1b9bff;
+    transition: .5s;
+  } */
+  .register-r{
+    font-size: 18px;
+  position: relative;
+  bottom: 7px;
+
+
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    /* display: none; */
+    visibility: hidden;
+  }
+  #check{
+    display: none;
+  }
+ 
+  .Contact-btn{
+    background-color: #F45A2A;
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    width: 10vw;
+    height: 50px;
+    padding: 0px;
+    margin-left: 25px;
+  }
+  .Contact-btn:hover{
+    background-color: rgb(255, 81, 0);
+  }
+  @media (max-width: 952px){
+    .logo{
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+      visibility: visible;
+    }
+    .nav-link{
+        opacity: .9;
+        
+
+    }
+     nav ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #070707;
+      top: 60px;
+      left: -111%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: right;
+      transition: all .5s;
+    }
+    .Contact-btn{
+        display: none;
+    }
+    nav ul li{
+      display: block;
+    }
+    nav ul li {
+      font-size: 20px;
+    }
+    li:hover,li.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0%;
+    }
+    .Contact-btn{
+        height: 10%;
+        width: 20%;
+        margin: 0;
+    }
+  }
+  

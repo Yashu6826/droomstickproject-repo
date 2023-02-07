@@ -1,0 +1,253 @@
+$clr-background:#2c3e50; // Shakespeare blue
+
+$clr-header:#FFF;
+$clr-heading:#000;
+$clr-text:#000;
+
+$clr-timeline:#FFF;
+$clr-memoryPoint:#FFF;
+$clr-memoryPoint-active:#52B3D9;
+$clr-memory:#f26c1e;
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// body {
+//   background: $clr-background;
+// }
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-header {
+  padding: 10px;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 3.5em;
+  text-align: center;
+  color: $clr-header;
+  text-shadow: 1px 1px 1px black;
+  margin-top: 30px;
+}
+
+.heading {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 1.5em;
+  color: $clr-heading;
+}
+
+.text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
+  color: $clr-text;
+}
+
+.placeholder {
+  background-color: #34495e;
+  height: 300px;
+  width: auto;
+}
+
+.memory-date {
+  @extend .heading;
+  text-align: center;
+  
+}
+
+.memory-text {
+  @extend .text;
+  margin: 10px 0px;
+  text-align: center;
+}
+
+.timeline{
+  margin: 50px 0px;
+}
+
+.memory {
+  list-style-type: none; // Removes bullet points
+  position: relative; // Positioning timeline relative to its container.
+  margin: 0 auto; // object will sit centrally within parent container.
+  width: 6px; // Why are you here width 6px? What is your purpose?
+  padding-top: 50px; // Whitespace for timeline
+  background: $clr-timeline; // Giving it a pretty background.
+}
+
+.memory::after {
+  content: ''; // No content, rather inserting a morphed empty container, a shape.
+  position: absolute;
+  
+  left: 50%; // Horizontally center the element respective to its parent;
+  transform: translateX(-50%); // move the element left exactly to 50% of its width
+ 
+  bottom: 0; // Placing shape at bottom of memory box
+  
+  // Making a sweet little circle that marks this memory on the timeline
+  width: 30px; 
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  
+  // Timeline circle before it becomes activated 'in-view'
+  background: $clr-memoryPoint;
+  transition: background .5s ease-in-out;
+  
+}
+
+.memory.in-view::after {
+  // Circle after it becomes activated 'in-view'.
+  background: $clr-memoryPoint-active;
+}
+
+.memory-container {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  background: $clr-memory;
+  animation: mymove 2s infinite;
+  
+  // Initially hiding the memory containers
+  // They will reappear with application of class '.in-view'
+  // visibility: hidden;
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}
+// .imageContainer{
+// flex-direction: 6;
+// height:150px ;
+// }
+// .imageContainer1 img{
+//   height: 100%;
+//   width: 100%;
+  
+// }
+
+.textContainer{
+flex-direction: 6;
+}
+
+.memory-container.in-view {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+.memory-container::before {
+  content: '';
+  position: absolute;
+  bottom: 7px; // Why are you here? What does this 7px mean!?!?
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.memory:nth-child(odd) .memory-container {
+  left: -130px;
+  transform: translate3d(200px,0,0);
+}
+
+.memory:nth-child(odd) .memory-container.in-view {
+  transform: none;
+}
+
+.memory:nth-child(odd) .memory-container::before {
+  // Making that sweet little accordion that points to the left.
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent $clr-memory transparent transparent;
+}
+
+.memory:nth-child(even) .memory-container {
+  right: 375px; // The mirror image of our leftward memory. 460px to the right = width (400px) + padding (15px) + relative positioning (45px) + ??
+  // original author uses left: -439px?
+  // Width of each div + Desired spacing - Width of each list item = 400px + 45px - 6px = 439px
+  transform: translate3d(-200px,0,0);
+}
+
+.memory:nth-child(even) .memory-container.in-view {
+  transform: none;
+}
+
+.memory:nth-child(even) .memory-container::before {
+  // Making that sweet little accordion that points to the right.
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent $clr-memory;
+}
+
+/* ---- TIMELINE RESPONSIVENESS --- */
+
+@media screen and (max-width: 900px) {
+  // Making memory containers significantly smaller in the case of small screens.
+  .memory-container {
+    width: 250px;
+  }
+  .memory:nth-child(even) .memory-container {
+    right: 320px; /* 250 + 45 - 6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .memory {
+    margin-left: 20px;
+  }
+  
+  .memory-container {
+    width: calc(100vw - 91px);
+  }
+  
+  .memory:nth-child(even) .memory-container {
+    left: 237px;
+  }
+  .memory:nth-child(even) .memory-container::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent $clr-memory transparent transparent;
+  }
+  .memory:nth-child(odd) .memory-container {
+    left: -161px;
+    transform: translate3d(200px,0,0);
+  }
+}
+
+.ContImg{
+  position: relative;
+  left: -624px;
+  top: -237px;
+  width: 660px;
+  // /* height: auto;
+}
+.card{
+  display: flex;
+  justify-content: center;
+}
+.cardholder{
+  background-color: #ffffff; 
+max-width: 24rem; 
+border-radius: 0.5rem; 
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+.cardholder img{
+  border-top-left-radius: 0.5rem;
+border-top-right-radius: 0.5rem; 
+}
+.text{
+  padding: 1.25rem;
+}
+.text p{
+  margin-bottom: 1rem; 
+color: #374151; 
+font-size: 1rem;
+line-height: 1.5rem; 
+}

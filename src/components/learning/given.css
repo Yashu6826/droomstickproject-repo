@@ -1,0 +1,49 @@
+.headComponent{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 40px;
+}
+.imagesection{
+    flex: 8;
+  
+
+color: white;
+}
+.imagesection img{
+    width: 100%;
+    height: auto;
+}
+.textarea{
+   color: white;
+}
+.textcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.textcontainer h1{
+    font-size: calc(60px + 2vw);
+    font-weight: 700;
+    
+}
+.textcontainer p{
+    font-size: x-large;
+    color: rgb(188, 185, 185);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 20px 15%;
+    text-align: center;
+}
+@media (max-width:700px){
+    
+    .textcontainer h1{
+        font-size: calc(20px + 4vw);
+        font-weight: 700;
+    } 
+    
+
+}
